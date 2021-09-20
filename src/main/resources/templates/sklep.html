@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sklep z kotami</title>
+</head>
+<body>
+<h1>FHU Dakar</h1>
+
+<header>
+    <a href="#" th:href="@{/admin/}">Administrator site</a>
+</header>
+<p/>
+
+<form th:action="@{/sklep}" th:object="${category}" method="post">
+    <label>Category: </label>
+    <select>
+        <option th:each="category : ${categories}"
+                th:value="${category}" th:text="${category.name}">Category</option>
+        <option>All</option>
+    </select>
+</form>
+<p/>
+
+<tr th:each="product: ${products}">
+    <p>-------------------</p>
+    <td th:text="${product.getName()}"/><br>
+    <td th:text="${product.getDescription()}"/><br>
+    <td th:text="${product.getPrice()}"/>
+
+</tr>
+
+</body>
+</html>
