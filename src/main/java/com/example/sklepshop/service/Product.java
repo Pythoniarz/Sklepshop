@@ -1,18 +1,23 @@
 package com.example.sklepshop.service;
 
 
+import org.springframework.stereotype.Component;
+
+import javax.persistence.criteria.CriteriaBuilder;
 import java.math.BigDecimal;
 
+@Component
 public class Product {
     public String name;
     public String description;
     public BigDecimal price;
-    public Category category;
+    public Integer categoryId;
 
-    public Product(String name, String description, BigDecimal price) {
+    public Product(String name, String description, BigDecimal price, Integer categoryId) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.categoryId = categoryId;
     }
 
     public Product() {

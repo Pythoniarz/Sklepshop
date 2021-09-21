@@ -12,12 +12,12 @@ public class ProductDao {
 
     public List<Product> products = new ArrayList<>(
             Arrays.asList(
-            new Product("Owocowa", "Smakowa", new BigDecimal("25.00")),
-            new Product("Biała", "Najlepsza", new BigDecimal("99.99")),
-            new Product("Czarna", "Jak kawa", new BigDecimal("5.50")),
-            new Product("Czerwona", "Żeby schuść", new BigDecimal("6.60")),
-            new Product("Arabica", "Jak kawa", new BigDecimal("5.50")),
-            new Product("Robusta", "Żeby schuść", new BigDecimal("6.60"))));
+            new Product("Owocowa", "Smakowa", new BigDecimal("25.00"), 1),
+            new Product("Biała", "Najlepsza", new BigDecimal("99.99"), 1),
+            new Product("Czarna", "Jak kawa", new BigDecimal("5.50"), 1),
+            new Product("Czerwona", "Żeby schuść", new BigDecimal("6.60"), 1),
+            new Product("Arabica", "Jak kawa", new BigDecimal("5.50"), 2),
+            new Product("Robusta", "Żeby schuść", new BigDecimal("6.60"), 2)));
 
 
     public List<Product> all() {

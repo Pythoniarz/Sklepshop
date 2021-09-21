@@ -11,14 +11,21 @@
     <a href="#" th:href="@{/admin/}">Administrator site</a>
 </header>
 <p/>
-
+<!--<label for="paymentMethod">Payment method:</label>-->
+<!--<select th:field="*{paymentMethod}" th:remove="all-but-first">-->
+<!--    <option th:each="paymentMethod : ${paymentMethods}"-->
+<!--            th:value="${paymentMethod}" th:text="${paymentMethod.description}">Credit card</option>-->
+<!--    <option>Another payment method</option>-->
+<!--    <option>Another payment method</option>-->
+<!--    -->
 <form th:action="@{/sklep}" th:object="${category}" method="post">
     <label>Category: </label>
     <select>
-        <option th:each="category : ${categories}"
-                th:value="${category}" th:text="${category.name}">Category</option>
         <option>All</option>
+        <option th:each="category : ${categories}"
+                th:value="${category.id}" th:text="${category.name}"/>
     </select>
+    <input type="submit" name="category"/>
 </form>
 <p/>
 
