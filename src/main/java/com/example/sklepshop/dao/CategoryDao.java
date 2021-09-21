@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class CategoryDao {
 
-    public List<Category> categories = new ArrayList<>(Arrays.asList(
+    private List<Category> categories = new ArrayList<>(Arrays.asList(
             new Category("Herbata", 1),
             new Category("Kawa", 2)));
 

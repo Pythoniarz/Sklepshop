@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ProductDao {
 
-    public List<Product> products = new ArrayList<>(
+    private List<Product> products = new ArrayList<>(
             Arrays.asList(
             new Product("Owocowa", "Smakowa", new BigDecimal("25.00"), 1),
             new Product("Biała", "Najlepsza", new BigDecimal("99.99"), 1),
@@ -26,6 +26,11 @@ public class ProductDao {
 
     public void addProduct(Product product) {
         this.products.add(product);
+    }
+
+    public void editProduct(int index, String productName, String productDescription, BigDecimal productPrice, int categoryId) {
+        Product product = new Product(productName, productDescription, productPrice, categoryId);
+        products.set(index, product);
     }
 
     public void deleteProduct(Integer index) {

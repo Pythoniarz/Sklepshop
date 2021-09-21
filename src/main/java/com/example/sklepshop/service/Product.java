@@ -3,7 +3,6 @@ package com.example.sklepshop.service;
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.math.BigDecimal;
 
 @Component
