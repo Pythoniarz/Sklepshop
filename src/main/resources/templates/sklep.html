@@ -11,13 +11,6 @@
     <a href="#" th:href="@{/admin/}">Administrator site</a>
 </header>
 <p/>
-<!--<label for="paymentMethod">Payment method:</label>-->
-<!--<select th:field="*{paymentMethod}" th:remove="all-but-first">-->
-<!--    <option th:each="paymentMethod : ${paymentMethods}"-->
-<!--            th:value="${paymentMethod}" th:text="${paymentMethod.description}">Credit card</option>-->
-<!--    <option>Another payment method</option>-->
-<!--    <option>Another payment method</option>-->
-<!--    -->
 <form th:action="@{/sklep}" th:object="${category}" method="post">
     <label>Category: </label>
     <select>
@@ -31,6 +24,7 @@
 
 <tr th:each="product: ${products}">
     <p>-------------------</p>
+
     <td th:text="${product.getName()}"/><br>
     <td th:text="${product.getDescription()}"/><br>
     <td th:text="${product.getPrice()}"/>

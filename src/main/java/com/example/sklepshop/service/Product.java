@@ -1,16 +1,21 @@
 package com.example.sklepshop.service;
 
-
-import org.springframework.stereotype.Component;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
-@Component
+@Entity
 public class Product {
-    public String name;
-    public String description;
-    public BigDecimal price;
-    public Integer categoryId;
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
+    private String name;
+    private String description;
+    private BigDecimal price;
+    private Integer categoryId;
 
     public Product(String name, String description, BigDecimal price, Integer categoryId) {
         this.name = name;
@@ -21,6 +26,23 @@ public class Product {
 
     public Product() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
 
     public void setName(String name) {
         this.name = name;

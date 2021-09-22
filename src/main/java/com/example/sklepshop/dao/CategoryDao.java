@@ -11,8 +11,8 @@ import java.util.List;
 public class CategoryDao {
 
     private List<Category> categories = new ArrayList<>(Arrays.asList(
-            new Category("Herbata", 1),
-            new Category("Kawa", 2)));
+            new Category("Herbata", 1L),
+            new Category("Kawa", 2L)));
 
     public List<Category> all() {
         return categories;
