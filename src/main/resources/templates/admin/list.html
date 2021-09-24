@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a th:href="@{/admin/add-product-form}">Add product</a>
+
+  <tr th:each="product: ${products}">
+    <p>------------------------</p>
+    <td th:text="${product.getName()}"/><br>
+    <td th:text="${product.getDescription()}"/>
+    <td th:text="${product.getPrice()}"/>
+
+    <a th:href="@{/admin/edit-product/{id}(id=${product.id})}">Edit product</a>
+    <form th:action="@{/admin/remove-product}" th:method="post" >
+      <input type="hidden" name="id" th:value="${product.id}"/>
+      <button type="submit" th:text="${'Delete ' + product.getName()}"></button>
+    </form>
+
+  </tr>
+</body>
+</html>
